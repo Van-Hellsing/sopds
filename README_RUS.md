@@ -1,5 +1,5 @@
 #### SimpleOPDS Catalog - Простой OPDS Каталог
-#### Author: Dmitry V.Shelepnev  
+#### Author: Dmitry V.Shelepnev  <<<<<<< m
 #### Версия 0.46
 "Приложение AppName. Версия #{AppName::Version::Number} от #{I18n.l AppName::Version::Date, :format => :long} года."
 
@@ -45,7 +45,7 @@
 - Django 1.10
 - Pillow 2.9.0
 - apscheduler 3.3.0
-- django-constance[database] 2.1
+- django-picklefield
 - lxml
 - python-telegram-bot 10
 
@@ -277,8 +277,11 @@ MySQL по сравнению с sqlite работает гораздо быст
 
 >     python3 manage.py sopds_util setconf SOPDS_FB2TOEPUB "convert/fb2epub/fb2epub"
 
-4.3 Конвертер fb2conv (конвертация в epub и mobi) http://www.the-ebook.org/forum/viewtopic.php?t=28447  
-- Необходимо установить python 2.7 и пакеты lxml, cssutils:   
+4.3 Конвертер fb2conv (конвертация в epub и mobi)  
+    http://www.the-ebook.org/forum/viewtopic.php?t=28447  
+    https://github.com/rupor-github/fb2mobi/releases  
+- Необходимо установить python 2.7 (однако для последней версии с GitHub этого делать уже не нужно, т.к. она использует как и SOPDS python3) 
+  и пакеты lxml, cssutils:   
   
          yum install python  
          yum install python-lxml  
@@ -438,4 +441,5 @@ MySQL по сравнению с sqlite работает гораздо быст
 (по умолчанию SOPDS_TELEBOT_AUTH = True)
 
 **SOPDS_TELEBOT_MAXITEMS** - Максимальное число одновременно выводимых элеменов в сообщении Telegram
+
 (по умолчанию SOPDS_TELEBOT_MAXITEMS = 10)

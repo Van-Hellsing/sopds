@@ -1,6 +1,6 @@
 #### SimpleOPDS Catalog
 #### Author: Dmitry V.Shelepnev
-#### Version 0.46
+#### Version 0.47-devel
 
 [Инструкция на русском языке: README_RUS.md](README_RUS.md)
 
@@ -17,7 +17,7 @@ or from github.com with the following command:
 - Django 1.10
 - Pillow 2.9.0
 - apscheduler 3.3.0
-- django-constance[database] 2.1
+- django-picklefield
 - lxml
 - python-telegram-bot 10
 
@@ -232,8 +232,11 @@ Next, you must first create a database "sopds" and a user with the necessary rig
 
 >     python3 manage.py sopds_util setconf SOPDS_FB2TOEPUB "convert/fb2epub/fb2epub"
 
-4.3 Converter fb2conv (converting to epub and mobi) http://www.the-ebook.org/forum/viewtopic.php?t=28447
-- It is necessary to install python 2.7 and the packages lxml, cssutils:
+4.3 Converter fb2conv (converting to epub and mobi)   
+    http://www.the-ebook.org/forum/viewtopic.php?t=28447  
+    https://github.com/rupor-github/fb2mobi/releases  
+- It is necessary to install python 2.7 (however, for the latest version with GitHub, you do not need to do this, since it uses the same as SOPDS python3)
+  and the packages lxml, cssutils:
 
          yum install python
          yum install python-lxml
@@ -393,4 +396,7 @@ existing user in the Simple OPDS database.
 (by default SOPDS_TELEBOT_AUTH = True)
 
 **SOPDS_TELEBOT_MAXITEMS** - The maximum number of simultaneously displayed items in the Telegram message
-(by default SOPDS_TELEBOT_MAXITEMS = 10)
+(by default SOPDS_TELEBOT_MAXITEMS = 10)    
+
+**SOPDS_TELEBOT_PROXY** - Proxy address    
+(example: https://68.183.231.47:8080/)
