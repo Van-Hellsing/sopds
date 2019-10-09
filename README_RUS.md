@@ -223,7 +223,8 @@ MySQL по сравнению с sqlite работает гораздо быст
 Далее необходимо сначала в БД PostgreSQL создать базу данных "sopds" и пользователя с необходимыми правами,
 например следующим образом:
 
-    psql -U postgres
+    sudo -u postgres psql
+    #psql -U postgres
 	 Password for user postgres: *****
 	 postgres=# create role sopds with password 'sopds' login;
 	 postgres=# create database sopds with owner sopds;
