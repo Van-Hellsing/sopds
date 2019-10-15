@@ -7,10 +7,8 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 
 [English README.md](README.md)
 
-
-----
+---
 #### Простая установка SimpleOPDS (используем простую БД sqlite3)
-
 
 <!--ts-->
 
@@ -23,28 +21,27 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 
 <!--te-->
 
-
-----
+---
 #### Установка
 
 Загрузить архив с проектом можно с сайта www.sopds.ru,  
-либо из github.com следующей командой:
+либо из github.com следующей командой:  
+`git clone https://github.com/mitshel/sopds.git`  
+- Требуется Python не ниже версии 3.4  
+Установка а примере ubuntu (здесь и далее):  
+`sudo apt install python3`
 
-`git clone https://github.com/mitshel/sopds.git`
+---
+#### Виртуальное окружение
 
-----
-  #### Виртуальное окружение  
-  **(можно пропустить).**
+******Шаг не обязательный, но рекомендуемый.******  
+Устанавливаем пакет виртуального окружения
 
-   На примере ubuntu
-   Устанавливаем пакет виртуального окружения
+```sudo apt-get install python3-venv```
+
+Если необходимой то выполняем всё от другого пользователя
    
-   	sudo apt-get install python3-venv
-
-   Если необходимой то выполняем всё от другого пользователя
-   
-
-        sudo su -l www-data -s /bin/bash
+> sudo su -l www-data -s /bin/bash
    
    Создаём папку виртуального окружения env в текущей директории
    
@@ -65,7 +62,7 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 ---
 #### Зависимости
 
-- Требуется Python не ниже версии 3.4
+
 - Django 1.10
 - Pillow 2.9.0
 - apscheduler 3.3.0
@@ -73,9 +70,8 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 - lxml
 - python-telegram-bot 10
 
-Для работы проекта необходимо установить указанные  [зависимости](requirements.txt): 
+Для работы проекта необходимо установить указанные  [зависимости](requirements.txt)
 
-	sudo apt install python3                            # команда установки для RHEL, Fedora, CentOS
 	python3 -m pip install -r requirements.txt
 	
 Для работы с БД PostgreSQL нужны ещё 2 пакета -  `pip3 install {psycopg2-binary,psycopg2}`
