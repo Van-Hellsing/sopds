@@ -14,7 +14,7 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 
 * [Установка](#установка)
    * [Виртуальное окружение](#виртуальное-окружение)
-   * [Зависимости](#зависимости)
+* [Зависимости](#зависимости)
 * [Инициализация базы данных](#инициализация-базы-данных)
 * [Суперпользователь](#суперпользователь)
 * [Путь к библиотеке](#путь-к-библиотеке)
@@ -34,78 +34,60 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 ---
 #### Виртуальное окружение
 
-******Шаг не обязательный, но рекомендуемый.******  
-Устанавливаем пакет виртуального окружения
-
-```sudo apt-get install python3-venv```
-
-Если необходимой то выполняем всё от другого пользователя
-   
-> sudo su -l www-data -s /bin/bash
-   
-   Создаём папку виртуального окружения env в текущей директории
-   
-   	python3 -m venv env
-   
-   Запускаем окружение
-   
-   	source env/bin/activate
-	
-   Обновляем установщик пакетов
-   
-   	pip3 install --upgrade pip
-	
-Все последующие действия выполнять из виртуального окружения.
-
+> ***Шаг не обязательный, но рекомендуемый.***  Устанавливаем пакет виртуального окружения  
+`sudo apt-get install python3-venv`  
+Если необходимой то выполняем вход от имени другого пользователя  
+`sudo su -l www-data -s /bin/bash`  
+Создаём папку виртуального окружения ***env*** в текущей директории  
+`python3 -m venv env`  
+Запускаем окружение  
+`source env/bin/activate`  
+Все последующие действия выполнять из виртуального окружения.  
 Для выхода из виртуального окружения - ***deactivate***
 
 ---
 #### Зависимости
 
+Для работы проекта необходимо установить [зависимости](requirements.txt)
 
-- Django 1.10
-- Pillow 2.9.0
-- apscheduler 3.3.0
-- django-picklefield
-- lxml
-- python-telegram-bot 10
+Обновляем установщик пакетов
 
-Для работы проекта необходимо установить указанные  [зависимости](requirements.txt)
+`pip3 install --upgrade pip`
 
-	python3 -m pip install -r requirements.txt
-	
-Для работы с БД PostgreSQL нужны ещё 2 пакета -  `pip3 install {psycopg2-binary,psycopg2}`
-(для psycorg2 понадобятся ещё 2 пакета: sudo apt install libpq-dev python3-dev)
+Устанавливаем зависимости
+
+`python3 -m pip install -r requirements.txt`
 
 ---
 #### Инициализация базы данных
 
-    и заполнение начальными данными (жанры)
+и заполнение начальными данными (жанры)
 
-	python3 manage.py migrate
-	python3 manage.py sopds_util clear
+```python3 manage.py migrate
+python3 manage.py sopds_util clear```
 
 ---
 #### Суперпользователь
 
-  Cоздаем суперпользователя
+Создаем суперпользователя
 
-	python3 manage.py createsuperuser
+`python3 manage.py createsuperuser`
 
 ---
 #### Путь к библиотеке
 
-   Настраиваем путь к Вашему каталогу с книгами и при необходимости переключаем язык интерфейса на русский
+Настраиваем путь к Вашему каталогу с книгами
 
-	python3 manage.py sopds_util setconf SOPDS_ROOT_LIB 'Путь к каталогу с книгами'
+`python3 manage.py sopds_util setconf SOPDS_ROOT_LIB '**Путь к каталогу с книгами**'`
 
 ---
 #### Смена локализации
-	
-	python3 manage.py sopds_util setconf SOPDS_LANGUAGE ru-RU
+
+При необходимости переключаем язык интерфейса на русский
+
+`python3 manage.py sopds_util setconf SOPDS_LANGUAGE ru-RU`
 	
 
-		
 1.6 Запускаем SCANNER сервер (опционально, необходим для автоматизированного периодического пересканирования коллекции) 
     Примите во внимание, что в  настройках по умолчанию задан периодический запуск сканирования 2 раза в день 12:00 и 0:00.
 
@@ -482,3 +464,11 @@ MySQL по сравнению с sqlite работает гораздо быст
 **SOPDS_TELEBOT_MAXITEMS** - Максимальное число одновременно выводимых элеменов в сообщении Telegram
 
 (по умолчанию SOPDS_TELEBOT_MAXITEMS = 10)
+
+
+
+
+
+Для работы с БД PostgreSQL нужны ещё 2 пакета -  `pip3 install {psycopg2-binary,psycopg2}`
+(для psycorg2 понадобятся ещё 2 пакета: sudo apt install libpq-dev python3-dev)
+
