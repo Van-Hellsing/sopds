@@ -1,12 +1,16 @@
+SimpleOPDS Catalog - Простой OPDS Каталог
+===
 
-# SimpleOPDS Catalog - Простой OPDS Каталог
-***Author: Dmitry V.Shelepnev***
+***Author: Dmitry V.Shelepnev*** 
+
 *Версия 0.47*
 
 [English README.md](README.md)
 
+
 ----
-### Простая установка SimpleOPDS (используем простую БД sqlite3)
+#### Простая установка SimpleOPDS (используем простую БД sqlite3)
+
 
 <!--ts-->
 
@@ -19,16 +23,17 @@
 
 <!--te-->
 
+
 ----
-#### Установка  
-: Загрузить архив с проектом можно с сайта www.sopds.ru, 
+#### Установка
+
+Загрузить архив с проектом можно с сайта www.sopds.ru,  
 либо из github.com следующей командой:
 
 `git clone https://github.com/mitshel/sopds.git`
 
 ----
-  #### Виртуальное окружение 
-
+  #### Виртуальное окружение  
   **(можно пропустить).**
 
    На примере ubuntu
