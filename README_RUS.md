@@ -19,6 +19,11 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 * [Суперпользователь](#суперпользователь)
 * [Путь к библиотеке](#путь-к-библиотеке)
 * [Локализация](#локализация)
+* [Запуск](#запуск)
+   * [Сканер](#сканер)
+   * [Сервер](#сервер)
+   * [Доступ к библиотеке](#доступ-к-библиотеке)
+   * [Telegram-бот](#telegram-бот)
 
 <!--te-->
 
@@ -72,7 +77,9 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 #### Путь к библиотеке
 
 Настраиваем путь к Вашему каталогу с книгами  
-`python3 manage.py sopds_util setconf SOPDS_ROOT_LIB '**Путь к каталогу с книгами**'`
+```bash
+python3 manage.py sopds_util setconf SOPDS_ROOT_LIB 'Путь к каталогу с книгами'
+```
 
 ---
 #### Локализация
@@ -82,39 +89,34 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 	
 ---
 ### Запуск
-   
-   #### Сканер
-   
-   Запускаем SCANNER сервер (опционально, необходим для автоматизированного периодического пересканирования коллекции).  
-   Примите во внимание, что в  настройках по умолчанию задан периодический запуск сканирования 2 раза в день 12:00 и 0:00.
 
-	python3 manage.py sopds_scanner start --daemon
+#### Сканер
+
+Запускаем SCANNER сервер (опционально, необходим для автоматизированного периодического пересканирования коллекции).  
+Примите во внимание, что в  настройках по умолчанию задан периодический запуск сканирования 2 раза в день 12:00 и 0:00.  
+`python3 manage.py sopds_scanner start --daemon`
 
 ---
-   #### Сервер
-   
-   Запускаем встроенный HTTP/OPDS сервер
+#### Сервер
 
-	python3 manage.py sopds_server start --daemon
+Запускаем встроенный HTTP/OPDS сервер  
+`python3 manage.py sopds_server start --daemon`
 	
-Однако наилучшим способом, все же является настройка в качестве HTTP/OPDS серверов [Apache](README_APACHE.MD) или Nginx 
+Однако наилучшим способом, все же является настройка в качестве HTTP/OPDS серверов [Apache](README_APACHE.MD) или [Nginx](docs/ru/nginx.md) 
 (точка входа ./sopds/wsgi.py)
-	
-1.8 Чтобы не дожидаться начала сканирования по расписанию, можно сообщить процессу sopds_scanner о необходимости
-    немедленного сканирования. Сделать это можно, установив конфигурационный параметр SOPDS_SCAN_START_DIRECTLY = True 
-    двумя способами:
 
-а) из консоли при помощи команды
+>Чтобы не дожидаться начала сканирования по расписанию, можно сообщить процессу `sopds_scanner` о необходимости немедленного   сканирования. Сделать это можно, установив конфигурационный параметр `SOPDS_SCAN_START_DIRECTLY = True` двумя способами:
 
-	python3 manage.py sopds_util setconf SOPDS_SCAN_START_DIRECTLY True
-	
-б) При попомощи страницы администрирования Web-интерфейса http://<Ваш сервер>:8001/admin/ 
+* из консоли при помощи команды  
+`python3 manage.py sopds_util setconf SOPDS_SCAN_START_DIRECTLY True`
+
+* При попомощи страницы администрирования Web-интерфейса `http://<Ваш сервер>:8001/admin/` 
    (Далее CONSTANCE -> Настройки -> 1. General Options -> SOPDS_SCAN_START_DIRECTLY)
 
 ---
-1.9 Доступ к информации
+#### Доступ к библиотеке
 
-Если все предыдущие шаги выполнены успешно, то к библиотеке можно получить доступ по следующим URL:  
+Если все предыдущие шаги выполнены успешно, то к библиотека будет доступна по следующим URL:  
 
 >     OPDS-версия: http://<Ваш сервер>:8001/opds/  
 >     HTTP-версия: http://<Ваш сервер>:8001/
@@ -123,27 +125,25 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 является одно-пользовательской. Поэтому пока не будет завершен процесс сканирования, запущенный 
 ранее, попытки доступа к серверу могут завершаться ошибкой
 "A server error occurred.  Please contact the administrator."  
-Для устранения указанной проблемы необходимо ипользовать многопользовательские БД, Например MYSQL.
+Для устранения указанной проблемы необходимо ипользовать многопользовательские БД, Например [MYSQL](docs/ru/mysql.md).
 
 ---
-1.10 При необходимости настраиваем и запускаем Telegram-бот
+#### Telegram-бот
 
+При необходимости настраиваем и запускаем
 Процесс создания ботов в телеграм очень прост, для создания своего бота в мессенджере Telegram необходимо подключиться к
 каналу [@BotFather](https://telegram.me/botfather) и дать команду создания нового бота **/newbot**. После чего ввести имя бота 
 (например: **myopds**), а затем имя пользователя для этого бота, обязательно заканчивающегося на "bot" (например: **myopds_bot**).
 В результате, вам будет выдан API_TOKEN, который нужно использовать в следующих командах, которые запустят Вашего личного 
-телеграм-бота, который позволит Вам, используя мессенджер Telegram получать быстрый доступ к личной библиотеке.    
-
-    python3 manage.py sopds_util setconf SOPDS_TELEBOT_API_TOKEN  "<Telegram API Token>"
-    python3 manage.py sopds_util setconf SOPDS_TELEBOT_AUTH False
-    python3 manage.py sopds_telebot start --daemon
-    
-Командой,    
-
-    python3 manage.py sopds_util setconf SOPDS_TELEBOT_AUTH True
-    
-можно ограничить использование Вашего бота пользователями Telegram. В этом случае Ваш бот будет обслуживать запросы только таких 
-пользователей, чье имя в telegram совпадает с существующим имененм пользователей в вашей БД Simple OPDS.
+телеграм-бота, который позволит Вам, используя мессенджер Telegram получать быстрый доступ к личной библиотеке.  
+```bash
+python3 manage.py sopds_util setconf SOPDS_TELEBOT_API_TOKEN  "<Telegram API Token>"  
+python3 manage.py sopds_util setconf SOPDS_TELEBOT_AUTH False  
+python3 manage.py sopds_telebot start --daemon
+```  
+Командой,  
+`python3 manage.py sopds_util setconf SOPDS_TELEBOT_AUTH True`  
+можно ограничить использование Вашего бота пользователями Telegram. В этом случае Ваш бот будет обслуживать запросы только таких пользователей, чье имя в telegram совпадает с существующим имененм пользователей в вашей БД Simple OPDS.
 
 ---
 #### 2. Настройка базы данных MySQL (опционально, но очень желательно для увеличения производительности).
@@ -159,16 +159,18 @@ MySQL по сравнению с sqlite работает гораздо быст
 Далее необходимо сначала в БД MySQL создать базу данных "sopds" и пользователя с необходимыми правами,
 например следующим образом:
 
-	mysql -uroot -proot_pass mysql  
-	mysql > create database if not exists sopds default charset=utf8;  
-	mysql > grant all on sopds.* to 'sopds'@'localhost' identified by 'sopds';  
-	mysql > commit;  
-	mysql > ^C  
-	
+```sql
+mysql -uroot -proot_pass mysql  
+mysql > create database if not exists sopds default charset=utf8;  
+mysql > grant all on sopds.* to 'sopds'@'localhost' identified by 'sopds';  
+mysql > commit;  
+mysql > ^C  
+```
+
 2.2 Далее в конфигурационном файде нужно закомментировать строки подключения к БД sqlite и соответсвенно раскомментировать
 строки подключения к БД Mysql:
 
-
+```python
 	DATABASES = {
 	    'default': {
 	        'ENGINE': 'django.db.backends.mysql',
@@ -190,6 +192,7 @@ MySQL по сравнению с sqlite работает гораздо быст
     #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #    }         
     #}  
+```
 
 2.4 Использование InnoDB вместо MyISAM.  
 Указанная выше конфигурация MySQL использует в качестве движка БД MyISAM, который работает на большинтсве версий MySQL или MariaDB.
