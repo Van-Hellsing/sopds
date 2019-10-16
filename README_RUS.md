@@ -1,10 +1,9 @@
 # SimpleOPDS Catalog   ![logo](sopds_web_backend/static/images/sopds_logo.gif)
 ### Простой OPDS Каталог
 
-<p align="justify">
-  Lorem ipsum
-</p>
-# Example text {align=center}
+| |
+|:---:|
+|ttt|
 
 ---  
 ***Author: Dmitry V.Shelepnev***  
