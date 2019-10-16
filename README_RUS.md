@@ -60,6 +60,14 @@
 `python3 -m pip install -r requirements.txt`
 
 ---
+#### pipenv
+python3.7 -m pip install pipenv
+python3.7 -m pipenv install --system
+pipenv shell
+.
+exit
+
+---
 #### Инициализация базы данных
 
 и заполнение начальными данными (жанры)  
