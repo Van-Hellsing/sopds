@@ -1,12 +1,5 @@
 # SimpleOPDS Catalog   ![logo](sopds_web_backend/static/images/sopds_logo.gif)
-### Простой OPDS Каталог
-
-| |
-|-------------------------:|
-|ttt|
-
-|---:uu|
-
+### Простой OPDS Каталог  
 ---  
 ***Author: Dmitry V.Shelepnev***  
 *Версия 0.47*
