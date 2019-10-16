@@ -1,10 +1,7 @@
-![logo](sopds_web_backend/static/images/sopds_logo.gif)
-# SimpleOPDS Catalog  
-## Простой OPDS Каталог
-===
-
-***Author: Dmitry V.Shelepnev*** 
-
+# SimpleOPDS Catalog   ![logo](sopds_web_backend/static/images/sopds_logo.gif)
+### Простой OPDS Каталог
+---  
+***Author: Dmitry V.Shelepnev***  
 *Версия 0.47*
 
 [English README.md](README.md)
