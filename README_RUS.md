@@ -2,7 +2,6 @@
   <img src="sopds_web_backend/static/images/sopds_logo.gif"
        alt="django-split-settings logo">
 </p>
-
 <h1 align="center">SimpleOPDS Catalog</h1>
 
 ### Простой OPDS Каталог  
