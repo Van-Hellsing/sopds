@@ -3,7 +3,7 @@
        alt="django-split-settings logo">
 </p>
 
-<p align="center"># SimpleOPDS Catalog</p>
+<h1 align="center">SimpleOPDS Catalog</h1>
 
 ### Простой OPDS Каталог  
 ---  
