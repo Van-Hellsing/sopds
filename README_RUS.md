@@ -1,4 +1,10 @@
-# SimpleOPDS Catalog   ![logo](sopds_web_backend/static/images/sopds_logo.gif)
+<p align="center">
+  <img src="sopds_web_backend/static/images/sopds_logo.gif"
+       alt="django-split-settings logo">
+</p>
+
+<p align="center"># SimpleOPDS Catalog</p>
+
 ### Простой OPDS Каталог  
 ---  
 ***Author: Dmitry V.Shelepnev***  
