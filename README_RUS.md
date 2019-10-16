@@ -66,10 +66,11 @@
 
 ---
 #### pipenv
-python3.7 -m pip install pipenv
-python3.7 -m pipenv install --system
-pipenv shell
-.
+python3.7 -m pip install pipenv  
+pipenv shell  
+python3.7 -m pipenv install --system  
+
+..
 exit
 
 ---
