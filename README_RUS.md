@@ -77,9 +77,7 @@ SimpleOPDS Catalog - Простой OPDS Каталог
 #### Путь к библиотеке
 
 Настраиваем путь к Вашему каталогу с книгами  
-```bash
-python3 manage.py sopds_util setconf SOPDS_ROOT_LIB 'Путь к каталогу с книгами'
-```
+`python3 manage.py sopds_util setconf SOPDS_ROOT_LIB 'Путь к каталогу с книгами'`
 
 ---
 #### Локализация
