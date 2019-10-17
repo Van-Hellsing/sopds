@@ -65,9 +65,11 @@
 `python3 -m pip install -r requirements.txt`
 
 ---
-#### pipenv
-python3.7 -m pip install pipenv  
-pipenv shell  
+#### pipenv  
+sudo su -l www-data -s /bin/bash
+python3.7 -m pip install pipenv ?  
+cd sopds
+python3 -m pipenv shell  
 python3.7 -m pipenv install --system  
 
 ..
