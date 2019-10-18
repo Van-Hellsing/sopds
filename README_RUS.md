@@ -67,6 +67,9 @@
 ---
 #### pipenv  
 sudo su -l www-data -s /bin/bash
+pip install --user от pip install отличается местом установки.
+Если pip install установит куда-то сюда /usr/local/lib/python3.4, то pip install --user в домашнюю в директорию( ~/.local/ ). Следовательно, для pip install(возможно) понадобятся права суперпользователя - sudo pip install
+
 python3.7 -m pip install pipenv ?  
 cd sopds
 python3 -m pipenv shell  
