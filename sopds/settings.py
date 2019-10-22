@@ -16,8 +16,14 @@ from collections import OrderedDict
 
 from django.utils.translation import ugettext_lazy as _
 
+# select sql
+#from .sqlite3 import *
+#from sopds.mysql import *
+#from sopds.postgresql import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -83,7 +89,9 @@ WSGI_APPLICATION = 'sopds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-#DATABASES = {    
+from sopds.sqlite3 import *
+
+#iDATABASES = {    
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME': 'sopds',
@@ -108,12 +116,12 @@ WSGI_APPLICATION = 'sopds.wsgi.application'
 #    }
 #}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }         
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }         
+#}
 
 #### SOPDS DATABASE SETTINGS FINISH ####
 
