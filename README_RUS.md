@@ -1,6 +1,6 @@
 #### SimpleOPDS Catalog - Простой OPDS Каталог
-#### Author: Dmitry V.Shelepnev  <<<<<<< m
-#### Версия 0.46
+#### Author: Dmitry V.Shelepnev
+#### Версия 0.47
 "Приложение AppName. Версия #{AppName::Version::Number} от #{I18n.l AppName::Version::Date, :format => :long} года."
 
 [English README.md](README.md)

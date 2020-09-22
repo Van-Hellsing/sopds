@@ -1,0 +1,82 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 16, 2019 - 23:32:06
+Django version 2.2, using settings 'sopds.settings_local'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[16/Oct/2019 23:34:59] "GET / HTTP/1.1" 302 0
+[16/Oct/2019 23:34:59] "GET /web/ HTTP/1.1" 200 7509
+[16/Oct/2019 23:34:59] "GET /static/foundation-icons/foundation-icons.css HTTP/1.1" 200 19508
+[16/Oct/2019 23:34:59] "GET /static/css/sopds.css HTTP/1.1" 200 73303
+[16/Oct/2019 23:34:59] "GET /static/images/sopds_logo.gif HTTP/1.1" 200 1672
+[16/Oct/2019 23:34:59] "GET /static/js/vendor/foundation.min.js HTTP/1.1" 200 109037
+[16/Oct/2019 23:34:59] "GET /static/js/vendor/jquery.js HTTP/1.1" 200 258648
+[16/Oct/2019 23:35:00] "GET /static/foundation-icons/foundation-icons.woff HTTP/1.1" 200 32020
+[16/Oct/2019 23:35:00] "GET /static/images/favicon.ico HTTP/1.1" 200 932
+[16/Oct/2019 23:35:15] "GET /web/login/ HTTP/1.1" 200 7374
+[16/Oct/2019 23:35:30] "POST /web/login/ HTTP/1.1" 302 0
+[16/Oct/2019 23:35:30] "GET /web/ HTTP/1.1" 200 7918
+[16/Oct/2019 23:35:42] "GET /admin/ HTTP/1.1" 200 4197
+[16/Oct/2019 23:35:43] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[16/Oct/2019 23:35:43] "GET /static/admin/css/base.css HTTP/1.1" 200 16189
+[16/Oct/2019 23:35:43] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[16/Oct/2019 23:35:43] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[16/Oct/2019 23:35:43] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[16/Oct/2019 23:35:43] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[16/Oct/2019 23:35:43] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[16/Oct/2019 23:35:43] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+Not Found: /favicon.ico
+[16/Oct/2019 23:35:43] "GET /favicon.ico HTTP/1.1" 404 2288
+[16/Oct/2019 23:35:46] "GET /admin/constance/config/ HTTP/1.1" 200 38372
+[16/Oct/2019 23:35:47] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6192
+[16/Oct/2019 23:35:47] "GET /static/admin/css/forms.css HTTP/1.1" 200 7765
+[16/Oct/2019 23:35:47] "GET /static/admin/css/constance.css HTTP/1.1" 200 317
+[16/Oct/2019 23:35:47] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[16/Oct/2019 23:35:47] "GET /static/admin/js/core.js HTTP/1.1" 200 7135
+[16/Oct/2019 23:35:47] "GET /static/admin/js/actions.js HTTP/1.1" 200 6538
+[16/Oct/2019 23:35:47] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[16/Oct/2019 23:35:47] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[16/Oct/2019 23:35:47] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10385
+[16/Oct/2019 23:35:47] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8972
+[16/Oct/2019 23:35:47] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[16/Oct/2019 23:35:47] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271751
+[16/Oct/2019 23:35:47] "GET /static/admin/js/constance.js HTTP/1.1" 200 1160
+[16/Oct/2019 23:35:47] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[16/Oct/2019 23:35:47] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[16/Oct/2019 23:36:06] "POST /admin/constance/config/ HTTP/1.1" 302 0
+[16/Oct/2019 23:36:06] "GET /admin/constance/config/ HTTP/1.1" 200 40908
+[16/Oct/2019 23:36:06] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[16/Oct/2019 23:36:06] "GET /admin/jsi18n/ HTTP/1.1" 200 14909
+[16/Oct/2019 23:36:46] "POST /admin/constance/config/ HTTP/1.1" 302 0
+[16/Oct/2019 23:36:46] "GET /admin/constance/config/ HTTP/1.1" 200 40941
+[16/Oct/2019 23:36:46] "GET /admin/jsi18n/ HTTP/1.1" 200 14909
+[16/Oct/2019 23:38:13] "GET /admin/constance/config/ HTTP/1.1" 200 40797
+[16/Oct/2019 23:38:13] "GET /admin/jsi18n/ HTTP/1.1" 200 14909
+[16/Oct/2019 23:43:08] "POST /admin/constance/config/ HTTP/1.1" 302 0
+[16/Oct/2019 23:43:08] "GET /admin/constance/config/ HTTP/1.1" 200 40941
+[16/Oct/2019 23:43:08] "GET /admin/jsi18n/ HTTP/1.1" 200 14909
+[16/Oct/2019 23:47:17] "GET / HTTP/1.1" 302 0
+[16/Oct/2019 23:47:17] "GET /web/ HTTP/1.1" 200 8392
+[16/Oct/2019 23:47:31] "GET /web/ HTTP/1.1" 200 8392
+[16/Oct/2019 23:47:31] "GET /static/images/favicon.ico HTTP/1.1" 200 932
+[17/Oct/2019 06:38:07] "GET / HTTP/1.1" 302 0
+[17/Oct/2019 06:38:07] "GET /web/ HTTP/1.1" 200 8392
+[17/Oct/2019 06:38:07] "GET /static/css/sopds.css HTTP/1.1" 304 0
+[17/Oct/2019 06:38:07] "GET /static/images/sopds_logo.gif HTTP/1.1" 304 0
+[17/Oct/2019 06:38:07] "GET /static/foundation-icons/foundation-icons.css HTTP/1.1" 304 0
+[17/Oct/2019 06:38:07] "GET /static/js/vendor/foundation.min.js HTTP/1.1" 304 0
+[17/Oct/2019 06:38:07] "GET /static/js/vendor/jquery.js HTTP/1.1" 304 0
+[17/Oct/2019 06:38:07] "GET /static/foundation-icons/foundation-icons.woff HTTP/1.1" 304 0
+[17/Oct/2019 06:38:15] "GET /web/ HTTP/1.1" 200 8392
+[17/Oct/2019 06:38:15] "GET /static/images/favicon.ico HTTP/1.1" 200 932
+[17/Oct/2019 14:42:03] "GET /web/ HTTP/1.1" 200 8392
+[17/Oct/2019 14:42:03] "GET /static/css/sopds.css HTTP/1.1" 304 0
+[17/Oct/2019 14:42:04] "GET /static/js/vendor/foundation.min.js HTTP/1.1" 304 0
+[17/Oct/2019 14:42:04] "GET /static/foundation-icons/foundation-icons.css HTTP/1.1" 304 0
+[17/Oct/2019 14:42:04] "GET /static/images/sopds_logo.gif HTTP/1.1" 304 0
+[17/Oct/2019 14:42:04] "GET /static/js/vendor/jquery.js HTTP/1.1" 200 258648
+[17/Oct/2019 14:42:04] "GET /static/foundation-icons/foundation-icons.woff HTTP/1.1" 304 0
+[17/Oct/2019 14:42:05] "GET /static/images/favicon.ico HTTP/1.1" 304 0
+[17/Oct/2019 14:42:08] "GET /web/ HTTP/1.1" 200 8392
+[17/Oct/2019 14:42:08] "GET /static/images/favicon.ico HTTP/1.1" 200 932
