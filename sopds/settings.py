@@ -11,24 +11,25 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import environ
 import sys
 from collections import OrderedDict
 
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = environ.Path(__file__) - 2
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm4l1c#nq6*zs!c3ri4dg4(54_7bvrl5uintni6p20tijlaxv!x'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(' ')
 
 # Application definition
 INSTALLED_APPS = [
@@ -86,36 +87,15 @@ WSGI_APPLICATION = 'sopds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-#DATABASES = {    
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'sopds',
-#        'HOST': 'localhost',
-#        'USER': 'sopds',
-#        'PASSWORD' : 'sopds',
-#        'OPTIONS' : {
-#            'init_command': "SET default_storage_engine=MyISAM;\
-#                             SET sql_mode='';"
-#        }
-#    }             
-#}
-
-#DATABASES = {
-#    'default': {
-#    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#    'NAME': 'sopds',
-#    'USER': 'sopds',
-#    'PASSWORD': 'sopds',
-#    'HOST': '', # Set to empty string for localhost.
-#    'PORT': '', # Set to empty string for default.
-#    }
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }         
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
+        "USER": os.environ.get("SQL_USER", "user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "PORT": os.environ.get("SQL_PORT", "5432"),
+    }
 }
 
 #### SOPDS DATABASE SETTINGS FINISH ####
